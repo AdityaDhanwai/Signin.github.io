@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <style>
+        body {
+            background-color: #8cadcf;
+        }
+        
+        #logo {
+            width: 150px;
+            height: 150px;
+            display: block;
+            margin: 0 auto;
+            margin-top: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        strong {
+            font-size: 24px;
+            color: #333;
+            display: block;
+            margin-top: 30px;
+        }
+        
+        #logout {
+            width: 120px;
+            padding: 10px;
+            background-color: #dde026;
+            color: #0a0a0a;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        #logout:hover {
+            background-color: #b30600;
+        }
+
+        /* Play and Pause Buttons */
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #daf82d;
+            color: #fff;
+            font-weight: bold;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #ff8200;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <img id="logo" src="img/logo.jpg" alt="Logo">
+    </center>
+    <center>
+        <strong>Welcome</strong>
+    </center>
+    <center>
+        <br>
+        <br>
+        <br>
+        <button id="playButton" class="button">Play Song</button>
+        <button id="pauseButton" class="button">Pause Song</button>
+        <br><br>
+        <a href="index.html" onclick="showThankYouMessage()">
+            <input id="logout" type="button" value="Log Out">
+        </a>
+    </center>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script>
+        const audio = new Audio("Main Rahoon Ya Na Rahoon - (Raag.Fm).mp3"); // Replace with the path to your song
+        
+        const playButton = document.getElementById("playButton");
+        const pauseButton = document.getElementById("pauseButton");
+        
+        playButton.addEventListener("click", () => {
+            audio.play();
+        });
+        
+        pauseButton.addEventListener("click", () => {
+            audio.pause();
+        });
+
+        function showThankYouMessage() {
+            alert("Thank You!");
+        }
+    </script>
+</body>
+</html>
